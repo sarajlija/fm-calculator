@@ -1,38 +1,333 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+:root {
+  /*Theme-1************************************/
+  /*background*/
+  --dark-desaturate-blue: hsl(222, 26%, 31%);
+  --very-dark-desaturate-blue: hsl(223, 31%, 20%);
+  --very-dark-scr-bg: hsl(224, 36%, 15%);
+  /*keys*/
+  --dark-desaturate-blue-key-bg: hsl(225, 21%, 49%); /*(key background)*/
+  --dark-desaturate-blue-key-shedow: hsl(224, 28%, 35%); /*(key shadow)*/
+  --red-bg: hsl(6, 63%, 50%); /*(key background, toggle)*/
+  --dark-red: hsl(6, 70%, 34%); /*(key shadow)*/
+  --light-grayish-orange: hsl(30, 25%, 89%); /*(key background)*/
+  --grayish-orange: hsl(28, 16%, 65%); /*((key shadow*/
+  /*text*/
+  --very-dark-greyish-blue: hsl(221, 14%, 31%);
+  --text-color: hsl(0, 0, 100%); /*text*/
+
+  /*Theme-2*******************************/
+  /*background*/
+  --light-grey: hsl(0, 0%, 90%); /*(main background)*/
+  --greish-red: hsl(0, 5%, 81%); /*(toggle background, keypad background)*/
+  --very-light-gray: hsl(0, 0%, 93%); /*(screen background)*/
+  /*keys*/
+  --dark-moderate-cyan: hsl(185, 42%, 37%); /*(key background)*/
+  --very-dark-cyan: hsl(185, 58%, 25%); /*(key shadow)*/
+  --orange-bg: hsl(25, 98%, 40%); /*(key background, toggle)*/
+  --dark-orange: hsl(25, 99%, 27%); /*(key shadow)*/
+  --light-grayish-yellow: hsl(45, 7%, 89%); /*(key background)*/
+  --dark-grayish-orange: hsl(35, 11%, 61%); /*((key shadow*/
+  /*text*/
+  --very-dark-greyish-yellow: hsl(60, 10%, 19%);
+  --text-color: hsl(0, 0, 100%); /*text*/
+
+  /*Theme-3*******************************/
+  /*background*/
+  --very-dark-violet-bg: hsl(268, 75%, 9%); /*(main background)*/
+  --dark-violet-bg: hsl(268, 71%, 12%); /*(toggle background, screen background, keypad background)*/
+
+  /*keys*/
+  --dark-violet: hsl(281, 89%, 26%); /*(key background)*/
+  --vivid-magenta: hsl(285, 91%, 52%); /*(key shadow)*/
+  --pure-cyan: hsl(176, 100%, 44%); /*(key background, toggle)*/
+  --soft-cyan: hsl(177, 92%, 70%); /*(key shadow)*/
+  --very-dark-violet: hsl(268, 47%, 21%); /*(key background)*/
+  --dark-magenta: hsl(290, 70%, 36%); /*((key shadow*/
+  /*text*/
+  --light-yellow: hsl(60, 10%, 19%);
+  --very-dark-blue: hsl(198, 20%, 13%);
+  --text-color: hsl(0, 0, 100%); /*text*/
+
+  /*Typography*/
+  --font-size-number: 32px;
+
+  /*Font*/
+
+  --font-family: "League", sans-serif;
+  --font-weight: 700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 66.6%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.theme-one {
+  height: 100vh;
+  display: flex;
+  font-weight: var(--font-weight);
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-desaturate-blue);
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-width: 24rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 26rem;
+}
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-number {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: end;
+  font-weight: 700;
+}
+.toggle-number span {
+  margin: 0 5px;
+}
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 700;
+}
+.theme-toggle span {
+  margin-right: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.theme-calc {
+  color: #ffffff;
+  align-self: end;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.form-control {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type="text"] {
+  display: flex;
+  background-color: var(--very-dark-scr-bg);
+  width: 100%;
+  height: 7rem;
+  padding-right: 1.6rem;
+  text-align: end;
+  font-size: 2.4rem;
+  font-weight: var(--font-weight);
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.container-calc {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.digit-calc {
+  width: 100%;
+  background-color: var(--very-dark-desaturate-blue);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.3rem 1.3rem;
+  border-radius: 0.5rem;
+}
+.digit-calc .reset {
+  grid-column: 1/3;
+}
+.digit-calc .equal {
+  grid-column: 3/5;
+}
+
+.btn {
+  font-weight: var(--font-weight);
+  font-size: 1.6rem;
+  border-radius: 5px;
+  padding: 9px 15px;
+  border: none;
+  box-shadow: 0 5px 0 var(--dark-desaturate-blue-key-shedow);
+  cursor: pointer;
+}
+.btn.del,
+.btn.reset {
+  background-color: var(--dark-desaturate-blue-key-bg);
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 0 var(--dark-desaturate-blue-key-shedow);
+  text-transform: uppercase;
+}
+.equal {
+  background-color: var(--red-bg);
+  color: white;
+  box-shadow: 0 5px 0 var(--dark-red);
+}
+.btn:focus,
+.btn:active {
+  outline: none;
+  border: none;
+}
+
+input:focus,
+input:active {
+  outline: none;
+}
+/*THREE STATE TOGGLE SWITCH*/
+.three-state-toggle {
+  background-color: var(--very-dark-desaturate-blue);
+  display: flex;
+  border: 3px solid transparent;
+  border-radius: 50px;
+}
+.three-state-toggle input {
+  height: 15px;
+  width: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--red-bg);
+  border-radius: 50%;
+  opacity: 0;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+}
+.three-state-toggle input:hover {
+  cursor: pointer;
+}
+.three-state-toggle #one {
+  opacity: 1;
+}
+
+/*THEME TWO*/
+
+.theme-two {
+  height: 100vh;
+  display: flex;
+  font-weight: var(--font-weight);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--light-grey);
+}
+.theme-two .container .header .theme-calc {
+  color: hsl(221, 14%, 31%);
+}
+.theme-two .container .header .theme .toggle-number {
+  color: hsl(221, 14%, 31%);
+}
+.theme-two .container .header .theme .theme-toggle span {
+  color: hsl(221, 14%, 31%);
+}
+.theme-two .container .header .theme .theme-toggle .three-state-toggle {
+  background-color: var(--greish-red);
+}
+.theme-two .container .header .theme .theme-toggle .three-state-toggle input {
+  background-color: var(--orange-bg);
+}
+
+.theme-two .container .form-control input[type="text"] {
+  background-color: var(--very-light-gray);
+  color: hsl(221, 14%, 31%);
+}
+.theme-two .container .container-calc .digit-calc {
+  background-color: var(--greish-red);
+}
+.theme-two .container .container-calc .digit-calc .btn {
+  background-color: var(--light-grayish-yellow);
+  border: none;
+  box-shadow: 0 3px 0 var(--dark-grayish-orange);
+}
+.theme-two .container .container-calc .digit-calc .reset {
+  background-color: var(--dark-moderate-cyan);
+  box-shadow: 0 5px 0 var(--very-dark-cyan);
+}
+.theme-two .container .container-calc .digit-calc .del {
+  background-color: var(--dark-moderate-cyan);
+  box-shadow: 0 5px 0 var(--very-dark-cyan);
+}
+.theme-two .container .container-calc .digit-calc .equal {
+  background-color: var(--orange-bg);
+  box-shadow: 0 5px 0 var(--dark-orange);
+}
+
+/*THEME THREE*/
+.theme-three {
+  height: 100vh;
+  display: flex;
+  font-weight: var(--font-weight);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--very-dark-violet-bg);
+}
+.theme-three .container .header .theme-calc {
+  color: hsl(52, 100%, 62%);
+}
+.theme-three .container .header .theme .toggle-number {
+  color: hsl(52, 100%, 62%);
+}
+.theme-three .container .header .theme .theme-toggle span {
+  color: hsl(52, 100%, 62%);
+}
+.theme-three .container .header .theme .theme-toggle .three-state-toggle {
+  background-color: var(--dark-violet-bg);
+}
+.theme-three .container .header .theme .theme-toggle .three-state-toggle input {
+  background-color: var(--pure-cyan);
+}
+
+.theme-three .container .form-control input[type="text"] {
+  background-color: var(--dark-violet-bg);
+  color: hsl(52, 100%, 62%);
+}
+.theme-three .container .container-calc .digit-calc {
+  background-color: var(--dark-violet-bg);
+}
+.theme-three .container .container-calc .digit-calc .btn {
+  background-color: var(--very-dark-violet);
+  border: none;
+  box-shadow: 0 3px 0 var(--dark-magenta);
+  color: hsl(52, 100%, 62%);
+}
+.theme-three .container .container-calc .digit-calc .reset {
+  background-color: var(--dark-violet);
+  box-shadow: 0 3px 0 var(--vivid-magenta);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.theme-three .container .container-calc .digit-calc .del {
+  background-color: var(--dark-violet);
+  box-shadow: 0 3px 0 var(--vivid-magenta);
+  color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.theme-three .container .container-calc .digit-calc .equal {
+  background-color: var(  --pure-cyan);
+  box-shadow: 0 3px 0 var(--soft-cyan);
 }
