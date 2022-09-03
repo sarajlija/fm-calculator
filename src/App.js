@@ -22,9 +22,7 @@ function App() {
   }
 
   const equal = () => {
-  
-
-    setResult(math.evaluate(result).toString());
+      setResult(math.evaluate(result).toString());
     console.log(result)
   }
 
