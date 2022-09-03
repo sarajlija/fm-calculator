@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react"
+import * as math from "mathjs";
 import "./App.css"
 import Toggle from "./Toggle.js"
 
@@ -21,13 +22,13 @@ function App() {
   }
 
   const equal = () => {
-    try {
-      setResult(eval(result).toString())
-    } catch (err) {
-      setResult("error")
-    }
+  
+
+    setResult(math.evaluate(result).toString());
+    console.log(result)
   }
 
+  
   return (
     <div className="container">
       <header className="header">
