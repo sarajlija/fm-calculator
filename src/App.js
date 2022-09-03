@@ -22,8 +22,13 @@ function App() {
   }
 
   const equal = () => {
+    try {
       setResult(math.evaluate(result).toString());
     console.log(result)
+  }
+    catch (err){
+      setResult("error")
+    }
   }
 
   
